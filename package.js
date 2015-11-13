@@ -13,6 +13,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   api.use('ecmascript');
+  api.use(['twbs:bootstrap@3.3.5','templating'],'client');
   api.addFiles('jade-bootstrap.js');
   api.addAssets([
     'components/accordion.jade',
