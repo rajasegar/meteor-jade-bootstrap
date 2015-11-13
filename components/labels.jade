@@ -1,0 +1,27 @@
+//- Generic label
+template(name="label")
+	span.label(class="label-#{type}")= text
+
+//- Default label
+template(name="label_default")
+	+label(type="default" text=text)
+
+//- Info label
+template(name="label_info")
+	+label(type="info" text=text)
+
+//- Primary label
+template(name="label_primary")
+	+label(type="primary" text=text)
+
+//- Success label
+template(name="label_success")
+	+label(type="success" text=text)
+
+//- Warning label
+template(name="label_warning")
+	+label(type="warning" text=text)
+
+//- Danger label
+template(name="label_danger")
+	+label(type="danger" text=text)

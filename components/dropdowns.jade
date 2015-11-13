@@ -1,0 +1,26 @@
+//- Dropdown
+template(name="dropdown")
+  .dropdown
+    button.btn.btn-default.dropdown-toggle(type="button",data-toggle="dropdown")
+      = caption
+      | &nbsp;
+      span.caret
+    ul.dropdown-menu(role="menu",aria-labelledby="dropdownMenu1")
+      +Template.contentBlock
+
+template(name="dropdown_link")
+  li
+    a(href="#{url}")= title
+
+template(name="dropdown_separator")
+  li.divider(role="separator")
+  
+//- Dropup
+template(name="dropup")
+  .dropup
+    button.btn.btn-default.dropdown-toggle(type="button",data-toggle="dropdown")
+      = caption
+      | &nbsp;
+      span.caret
+    ul.dropdown-menu(role="menu",aria-labelledby="dropupMenu1")
+      +Template.contentBlock

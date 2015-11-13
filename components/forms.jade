@@ -1,0 +1,59 @@
+//- Input control with form-group wrapper
+//- usage: (type,id,placeholder,label)
+template(name="input")
+  .form-group
+    label(for="#{id}") #{label}
+    input.form-control(type="#{type}",id="#{id}",placeholder="#{placeholder}")
+
+//- Simple form input control without a form-group
+//- usage: (type,id,placeholder,label)
+template(name="input_simple")
+  input.form-control(type="#{type}",id="#{id}",placeholder="#{placeholder}")
+
+//- Checkbox - Block style
+template(name="checkbox")
+  .checkbox
+    label
+      input(type="checkbox")
+      = text
+
+//- Checkbox - Inline style
+template(name="checkbox_inline")
+  .checkbox-inline
+    input(type="checkbox")
+    = text
+
+//- Radio box
+template(name="radio")
+  .radio
+    label
+      input(type="radio" name="#{name}")
+      = text
+
+//- Radio box - Inline style
+template(name="radio_inline")
+  .radio-inline
+    input(type="radio" name="#{name}")
+    = text
+
+//- Submit button
+template(name="submit")
+  .form-group
+    button.btn.btn-default(type="submit")= text
+
+//- Input group - both prepend and append options available, and block is passed
+template(name="input_group")
+  .form-group
+    .input-group
+      +Template.contentBlock
+
+//- Icon button
+template(name="icon_btn")
+  button.btn.btn-default(type="button",aria-label="#{icon}")
+    +icon(icon)
+
+
+
+//- Badges
+template(name="badge")
+  span.badge= text

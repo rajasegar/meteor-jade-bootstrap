@@ -1,0 +1,18 @@
+template(name="tabs")
+  +Template.contentBlock
+
+template(name="nav_tabs")
+  ul.nav.nav-tabs(role="tablist")
+    +Template.contentBlock
+
+template(name="tab_link")
+  li(role="presentation" class="#{active}")
+    a(href="#{url}" aria-controls="#{title}" role="tab" data-toggle="tab")= title
+
+template(name="tab_content")
+  .tab-content
+    +Template.contentBlock
+
+template(name="tab_panel")
+  div(role="tabpanel" class="tab-pane #{active}" id="#{id}")
+    +Template.contentBlock

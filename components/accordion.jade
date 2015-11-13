@@ -1,0 +1,54 @@
+//- accordion
+//- USAGE: +accordion(id="abcd")
+template(name="accordion")
+  .panel-group(id="accordion#{id}" role="tablist" aria-multiselectable="true")
+    +Template.contentBlock
+
+//- accordion-item
+//- USAGE: +accordion_item(type="" title="" parent="" expanded="")
+template(name="accordion_item")
+  .panel(class="panel-#{type}")
+    .panel-heading(role="tab" id="heading#{accordion_id}")
+      h4.panel-title
+
+        a(data-toggle="collapse" data-parent="#accordion#{parent}" href="#collapse#{accordion_id}" aria-expanded="true" aria-controls="collapseOne")
+          = title
+    unless expanded
+      .panel-collapse.collapse(id="collapse#{accordion_id}" role="tabpanel" aria-labelledby="heading#{title}")
+        .panel-body
+          +Template.contentBlock
+    else
+      .panel-collapse.collapse.in(id="collapse#{accordion_id}" role="tabpanel" aria-labelledby="heading#{title}")
+        .panel-body
+          +Template.contentBlock
+
+//- accordion-item-default
+//- USAGE: +accordion_item_default(title="" parent="" expanded="")
+template(name="accordion_item_default")
+  +accordion_item(type="default" title=title parent=parent expanded=expanded)
+    +Template.contentBlock
+
+//- accordion-item-primary
+template(name="accordion_item_primary")
+  +accordion_item(type="primary" title=title parent=parent expanded=expanded)
+    +Template.contentBlock
+
+//- accordion-item-info
+template(name="accordion_item_info")
+  +accordion_item(type="info" title=title parent=parent expanded=expanded)
+    +Template.contentBlock
+
+//- accordion-item-success
+template(name="accordion_item_success")
+  +accordion_item(type="success" title=title parent=parent expanded=expanded)
+    +Template.contentBlock
+
+//- accordion-item-warning
+template(name="accordion_item_warning")
+  +accordion_item(type="warning" title=title parent=parent expanded=expanded)
+    +Template.contentBlock
+
+//- accordion-item-danger
+template(name="accordion_item_danger")
+  +accordion_item(type="danger" title=title parent=parent expanded=expanded)
+    +Template.contentBlock

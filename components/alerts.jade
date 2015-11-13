@@ -1,0 +1,137 @@
+//- alerts.jade
+//- alert templates
+
+//- Generic Simple alert
+template(name="alert")
+	.alert(role="alert",class="alert-#{type}")
+		!{ message }
+
+
+//- Generic alert with icon
+template(name="alert_i")
+	.alert(role="alert",class="alert-#{type}")
+		+icon(name=icon)
+		|  &nbsp;
+		= message
+
+
+//- Generic alert with close button
+template(name="alert_x")
+	.alert.alert-dismissible(role="alert",class="alert-#{type}")
+		button.close(type="button",data-dismiss="alert" aria-label="Close")
+			span(aria-hidden="true")  &times;
+		= message
+
+//- Generic alert with icon and close button
+template(name="alert_ix")
+	.alert.alert-dismissible(role="alert",class="alert-#{type}")
+		+icon(name=icon)
+		button.close(type="button",data-dismiss="alert" aria-label="Close")
+			span(aria-hidden="true")  &times;
+		= message
+
+//------------------------------------------------------
+//- ALERTS
+//------------------------------------------------------
+//- Alert info
+template(name="alert_info")
+	unless icon
+		- var icon = "info-sign"
+	+alert("info" message icon)
+
+
+//- Alert success
+template(name="alert_success")
+	unless icon
+		- var icon = "ok-sign"
+	+alert("success" message icon)
+
+//- Alert warning
+template(name="alert_warning")
+	unless icon
+		- var icon = "exclamation-sign"
+	+alert("warning" message icon)
+
+//- Alert danger
+template(name="alert_danger")
+	unless icon
+		- var icon = "remove-sign"
+	+alert("danger" message icon)
+
+//------------------------------------------------------
+//- ALERTS WITH ICONS
+//------------------------------------------------------
+//- Alert info
+template(name="alert_i_info")
+	unless icon
+		- var icon = "info-sign"
+	+alert_i("info" message icon)
+
+
+//- Alert success
+template(name="alert_i_success")
+	unless icon
+		- var icon = "ok-sign"
+	+alert_i("success" message icon)
+
+//- Alert warning
+template(name="alert_i_warning")
+	unless icon
+		- var icon = "exclamation-sign"
+	+alert_i("warning" message icon)
+
+//- Alert danger
+template(name="alert_i_danger")
+	unless icon
+		- var icon = "remove-sign"
+	+alert_i("danger" message icon)
+
+
+//------------------------------------------------------
+//- DISMISSIBLE ALERTS
+//------------------------------------------------------
+//- Alert info
+template(name="alert_x_info")
+	+alert_x("info" message)
+
+
+//- Alert success
+template(name="alert_x_success")
+	+alert_x("success" message)
+
+//- Alert warning
+template(name="alert_x_warning")
+	+alert_x("warning" message)
+
+//- Alert danger
+template(name="alert_x_danger")
+	+alert_x("danger" message)
+
+
+//------------------------------------------------------
+//- DISMISSIBLE ALERTS WITH ICONS
+//------------------------------------------------------
+//- Alert info
+template(name="alert_ix_info")
+	unless icon
+		- var icon = "info-sign"
+	+alert_ix("info" message icon)
+
+
+//- Alert success
+template(name="alert_ix_success")
+	unless icon
+		- var icon = "ok-sign"
+	+alert_ix("success" message icon)
+
+//- Alert warning
+template(name="alert_ix_warning")
+	unless icon
+		- var icon = "exclamation-sign"
+	+alert_ix("warning" message icon)
+
+//- Alert danger
+template(name="alert_ix_danger")
+	unless icon
+		- var icon = "remove-sign"
+	+alert_ix("danger" message icon)

@@ -1,0 +1,32 @@
+//- carousel
+//- USAGE : +carousel(id)
+template(name="carousel")
+  div(id="#{id}" class="carousel slide" data-ride="carousel")
+    //-  Indicators
+    ol.carousel-indicators
+      each slides
+        li(data-target="##{parent}" data-slide-to="#{index}" class="#{active}")
+
+    //-  Wrapper for slides
+    .carousel-inner(role="listbox")
+      +Template.contentBlock
+
+
+
+    //- Controls
+    a.left.carousel-control(href="##{id}" role="button" data-slide="prev")
+      span.glyphicon.glyphicon-chevron-left(aria-hidden="true")
+      span.sr-only Previous
+    a.right.carousel-control(href="##{id}" role="button" data-slide="next")
+      span.glyphicon.glyphicon-chevron-right(aria-hidden="true")
+      span.sr-only Next
+
+template(name="carousel_item")
+  .item(class="#{active}")
+    img(src="#{image}" alt="...")
+    +Template.contentBlock
+
+
+template(name="carousel_caption")
+  .carousel-caption
+    +Template.contentBlock
