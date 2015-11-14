@@ -1,6 +1,6 @@
 Package.describe({
   name: 'rajasegar:jade-bootstrap',
-  version: '0.0.1',
+  version: '0.0.8',
   // Brief, one-line summary of the package.
   summary: 'Bootstrap components written using JADE mixins for Meteor',
   // URL to the Git repository containing the source code for this package.
@@ -13,26 +13,27 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   api.use('ecmascript');
-  api.use(['twbs:bootstrap@3.3.5','templating'],'client');
+  api.use(['twbs:bootstrap@3.3.5','templating','mquandalle:jade@0.4.5'],'client');
   api.addFiles('jade-bootstrap.js');
   api.addAssets([
-    'components/accordion.jade',
-    'components/alerts.jade',
-    'components/bootswatch.jade',
-    'components/carousel.jade',
-    'components/dropdowns.jade',
-    'components/forms.jade',
-    'components/icons.jade',
-    'components/images.jade',
-    'components/labels.jade',
-    'components/list_groups.jade',
-    'components/modal.jade',
-    'components/tabs.jade'
-  ],'client');
+    'accordion.jade',
+    'alerts.jade',
+    'bootswatch.jade',
+    'carousel.jade',
+    'dropdowns.jade',
+    'forms.jade',
+    'icons.jade',
+    'images.jade',
+    'labels.jade',
+    'list_groups.jade',
+    'modal.jade',
+    'tabs.jade'
+  ],['client','server']);
   api.addFiles([
-    'components/accordion.js',
-    'components/carousel.js'
+    'accordion.js',
+    'carousel.js'
   ]);
+
 });
 
 Package.onTest(function(api) {

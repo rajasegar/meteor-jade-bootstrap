@@ -1,3 +1,6 @@
+if(Meteor.isClient){
+
+
 var CAROUSELS = new ReactiveDict();
 
 
@@ -36,3 +39,4 @@ Template.carousel_item.created = function(){
 
 
 };
+}
