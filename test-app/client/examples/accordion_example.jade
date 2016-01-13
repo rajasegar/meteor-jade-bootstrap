@@ -1,0 +1,7 @@
+template(name="accordion_example")
+  h1 Accordions
+  +accordion(id="myAccordion")
+    +accordion_item(type="primary" parent="myAccordion" title="My Title1" expanded="true")
+      h2 This is accordion content
+    +accordion_item(type="success" parent="myAccordion" title="My Title2")
+      h2 This is accordion content

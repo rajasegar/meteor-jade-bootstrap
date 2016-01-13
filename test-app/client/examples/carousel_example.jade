@@ -1,0 +1,19 @@
+template(name="carousel_example")
+  h1 Carousel
+  +carousel(id="myCarousel")
+    +carousel_item(parent="myCarousel" image="slide1.jpg" active="active")
+      +carousel_caption
+        |  My carousel caption#1
+    +carousel_item(parent="myCarousel" image="slide2.jpg")
+      +carousel_caption
+        |  My carousel caption#2
+    +carousel_item(parent="myCarousel" image="slide3.jpg")
+      +carousel_caption
+        | My carousel caption#3
+
+        
+  h1 Another Carousel
+  +carousel(id="myCarousel2")
+    +carousel_item(parent="myCarousel2" image="slide5.jpg" caption="My Carousel caption#3" active="active")
+    +carousel_item(parent="myCarousel2" image="slide6.jpg" caption="My Carousel caption#3")
+    +carousel_item(parent="myCarousel2" image="slide7.jpg" caption="My Carousel caption#3")

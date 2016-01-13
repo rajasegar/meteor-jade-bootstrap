@@ -1,0 +1,9 @@
+template(name="layout")
+  .container
+    .row
+      .col-md-12
+        +navigation
+      .col-md-9
+        +Template.dynamic template=main
+      .col-md-3
+        +sidebar

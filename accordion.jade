@@ -2,7 +2,7 @@
 //- USAGE: +accordion(id="abcd")
 template(name="accordion")
   .panel-group(id="accordion#{id}" role="tablist" aria-multiselectable="true")
-    {{> Template.contentBlock }}
+    +Template.contentBlock
 
 //- accordion-item
 //- USAGE: +accordion_item(type="" title="" parent="" expanded="")

@@ -13,13 +13,13 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.0.2');
   api.use('ecmascript');
-  api.use(['twbs:bootstrap@3.3.5','templating','mquandalle:jade@0.4.5'],'client');
+  api.use(['twbs:bootstrap@3.3.5','templating','mquandalle:jade@0.4.5','reactive-var','reactive-dict'],'client');
   api.addFiles('jade-bootstrap.js');
+  api.addAssets('carousel.jade','client');
   api.addAssets([
     'accordion.jade',
     'alerts.jade',
     'bootswatch.jade',
-    'carousel.jade',
     'dropdowns.jade',
     'forms.jade',
     'icons.jade',

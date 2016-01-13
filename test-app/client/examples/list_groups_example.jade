@@ -1,0 +1,64 @@
+template(name="listgroups_example")
+  h1 List Group
+  p
+    | List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.
+  h2 Basic Example
+  p
+    | The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.
+  .col-md-6
+    +list_group
+      +list_group_item
+        | Cras justo odio
+      +list_group_item
+        | Cras justo odio
+      +list_group_item
+        | Cras justo odio
+      +list_group_item
+        | Cras justo odio
+      +list_group_item
+        | Cras justo odio
+  .clearfix
+  h2 Badges
+  p
+    | Add the badges component to any list group item and it will automatically be positioned on the right.
+  .col-md-6
+    +list_group
+      +list_group_item
+        span.badge 14
+        | Cras justo odio
+      +list_group_item
+        span.badge 2
+        | Dapibus ac facilisis in
+      +list_group_item
+        span.badge 1
+        | Morbi leo risus
+
+  .clearfix
+
+  h2 Linked items
+  p
+    | Linkify list group items by using anchor tags instead of list items (that also means a parent &lt;div&gt; instead of an &lt;ul&gt;). No need for individual parents around each element.
+  .col-md-6
+    +list_group_links
+      +list_group_link(url="#" active="active")
+        | Cras justo odio
+      +list_group_link(url="#")
+        | Cras justo odio
+      +list_group_link(url="#")
+        | Cras justo odio
+  .clearfix
+  h2 Button items
+  p
+    | List group items may be buttons instead of list items (that also means a parent &lt;div&gt; instead of an &lt;ul&gt;). No need for individual parents around each element. Don't use the standard .btn classes here.
+  .col-md-6
+    +list_group_links
+      +list_group_btn
+        | Cras justo odio
+      +list_group_btn
+        | Cras justo odio
+      +list_group_btn
+        | Cras justo odio
+      +list_group_btn
+        | Cras justo odio
+      +list_group_btn
+        | Cras justo odio

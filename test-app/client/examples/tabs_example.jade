@@ -1,0 +1,14 @@
+template(name="tabs_example")
+  h1 Tabs
+  +tabs
+    +nav_tabs
+      +tab_link(title="Home" url="#Home" active="active")
+      +tab_link(title="Profile" url="#Profile")
+      +tab_link(title="Settings" url="#Settings")
+    +tab_content
+      +tab_panel(id="Home" active="active")
+        h1 This is home content
+      +tab_panel(id="Profile")
+        h2 This is profile content
+      +tab_panel(id="Settings")
+        h2 This is Settings tab
